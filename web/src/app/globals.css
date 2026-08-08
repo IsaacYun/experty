@@ -21,10 +21,10 @@
 }
 
 @theme {
-  --color-brand: #ff5800;
-  --color-brand-deep: #ff6f00;
-  --color-brand-hover: #e04d00;
-  --color-brand-soft: #ff8a50;
+  --color-brand: #ff5b00;
+  --color-brand-deep: #e94f00;
+  --color-brand-hover: #df4d00;
+  --color-brand-soft: #ff8d4a;
   --color-brand-50: #fff8f2;
   --color-brand-100: #ffe9d5;
   --color-brand-200: #ffd0a6;
@@ -66,6 +66,9 @@ body {
   letter-spacing: -0.011em;
   word-break: keep-all;
 }
+
+.terra-checker { background-image: linear-gradient(rgba(16,24,40,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(16,24,40,.045) 1px,transparent 1px); background-size: 34px 34px; }
+.terra-display { letter-spacing:-.07em; }
 
 html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }

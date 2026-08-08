@@ -97,11 +97,13 @@ export default function Home() {
       <SiteHeader />
 
       {/* Hero */}
-      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28">
+      <section className="terra-checker relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28">
         <div
           aria-hidden
           className="pointer-events-none absolute inset-x-0 top-0 h-[560px] bg-[radial-gradient(60%_60%_at_50%_0%,#ffe9d5_0%,#fff8f2_45%,transparent_100%)]"
         />
+        <div aria-hidden className="absolute -left-12 top-28 h-48 w-48 rounded-full bg-brand-100 blur-sm" />
+        <div aria-hidden className="absolute right-[10%] top-44 h-24 w-24 rotate-12 rounded-[28px] border border-brand/30 bg-white" />
         <div className="relative mx-auto max-w-6xl px-5 text-center">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -114,13 +116,13 @@ export default function Home() {
           </motion.div>
 
           <motion.h1
-            className="mx-auto mt-7 max-w-4xl text-4xl font-bold leading-[1.15] text-ink-950 md:text-6xl"
+            className="terra-display mx-auto mt-7 max-w-4xl text-5xl font-bold leading-[1.05] text-ink-950 md:text-7xl"
             style={{ fontFamily: "var(--font-display)" }}
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.08 }}
           >
-            섭외 문의,<br className="md:hidden" /> 이제 <span className="text-brand">3분</span> 만에 시작
+            섭외를 받는 일,<br />이제 <span className="text-brand">혼자</span> 하지 마세요
           </motion.h1>
 
           <motion.p
@@ -129,8 +131,8 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.16 }}
           >
-            이메일, 전화, DM으로 흩어지던 강연·방송·인터뷰 섭외를 한곳에서 받고,
-            일정과 조건을 자동으로 정리합니다. 수수료는 평생 0원.
+            강연·방송·인터뷰 섭외를 전용 링크 하나로 받고,
+            일정과 조건을 자동으로 정리합니다.
           </motion.p>
 
           <motion.div
@@ -148,18 +150,14 @@ export default function Home() {
           </motion.div>
 
           <motion.div
-            className="mx-auto mt-14 flex max-w-3xl flex-wrap items-center justify-center gap-3"
+            className="mx-auto mt-14 grid max-w-3xl gap-3 text-left sm:grid-cols-2"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <div className="flex items-center gap-2 rounded-full border border-line bg-white px-4 py-2 text-sm text-ink-700 shadow-sm">
-              <span className="flex h-2 w-2 rounded-full bg-ok" />
-              25분 전 김인만 소장이 새 섭외 문의를 수락했어요
+            <div className="flex items-center gap-3 rounded-2xl border border-line bg-white px-5 py-4 text-sm text-ink-700 shadow-[0_16px_36px_rgba(16,24,40,.08)]"><span className="flex h-9 w-9 items-center justify-center rounded-xl bg-brand-100 font-bold text-brand">01</span><span><b className="block text-ink-950">조건이 채워진 문의</b>되묻는 연락 없이 시작</span>
             </div>
-            <div className="hidden items-center gap-2 rounded-full border border-line bg-white px-4 py-2 text-sm text-ink-700 shadow-sm sm:flex">
-              <span className="flex h-2 w-2 rounded-full bg-brand" />
-              박정호 교수의 경영포럼 일정이 확정됐어요
+            <div className="flex items-center gap-3 rounded-2xl border border-line bg-navy-900 px-5 py-4 text-sm text-white shadow-[0_16px_36px_rgba(16,24,40,.14)]"><span className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/10 font-bold text-brand-soft">02</span><span><b className="block text-white">일정 충돌을 먼저 확인</b><span className="text-white/60">확정하면 캘린더까지</span></span>
             </div>
           </motion.div>
         </div>
