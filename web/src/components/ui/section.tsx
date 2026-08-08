@@ -52,7 +52,7 @@ export function SectionHeading({
       )}
       <h2
         className={cn(
-          "font-bold leading-tight text-3xl md:text-5xl",
+          "text-3xl font-bold leading-[1.16] tracking-[-0.04em] md:text-5xl md:leading-[1.1]",
           dark ? "text-white" : "text-ink-950"
         )}
         style={{ fontFamily: "var(--font-display)" }}

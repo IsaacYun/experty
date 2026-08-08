@@ -1,5 +1,35 @@
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css");
 @import "tailwindcss";
+
+@font-face {
+  font-family: "SUIT";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SUIT";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SUIT";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SUIT";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SUIT";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
+  font-display: swap;
+}
 
 @font-face {
   font-family: "GMarketSans";
@@ -45,8 +75,9 @@
   --color-ok: #2de0a4;
   --color-warn: #f99c00;
 
-  --font-sans: "Pretendard Variable", Pretendard, -apple-system, "Apple SD Gothic Neo", sans-serif;
-  --font-display: "GMarketSans", "Pretendard Variable", Pretendard, sans-serif;
+  --font-sans: "SUIT", -apple-system, "Apple SD Gothic Neo", sans-serif;
+  --font-display: "SUIT", -apple-system, "Apple SD Gothic Neo", sans-serif;
+  --font-logo: "GMarketSans", "SUIT", sans-serif;
 }
 
 @theme inline {
@@ -68,7 +99,21 @@ body {
 }
 
 .terra-checker { background-image: linear-gradient(rgba(16,24,40,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(16,24,40,.045) 1px,transparent 1px); background-size: 34px 34px; }
-.terra-display { letter-spacing:-.07em; }
+.terra-display {
+  line-height: 1.1;
+  letter-spacing: -.045em;
+  text-wrap: balance;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+@media (min-width: 768px) {
+  .terra-display { line-height: 1.06; }
+}
 
 html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }

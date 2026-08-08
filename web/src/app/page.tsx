@@ -116,7 +116,7 @@ export default function Home() {
           </motion.div>
 
           <motion.h1
-            className="terra-display mx-auto mt-7 max-w-4xl text-5xl font-bold leading-[1.05] text-ink-950 md:text-7xl"
+            className="terra-display mx-auto mt-7 max-w-4xl text-5xl font-bold text-ink-950 md:text-7xl"
             style={{ fontFamily: "var(--font-display)" }}
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
@@ -336,7 +336,7 @@ export default function Home() {
               className="pointer-events-none absolute inset-0 bg-[radial-gradient(50%_80%_at_50%_110%,rgba(255,255,255,0.25)_0%,transparent_60%)]"
             />
             <h2
-              className="relative text-3xl font-bold leading-tight text-white md:text-5xl"
+              className="relative text-3xl font-bold leading-[1.16] tracking-[-0.04em] text-white md:text-5xl md:leading-[1.1]"
               style={{ fontFamily: "var(--font-display)" }}
             >
               문의는 늘 놓치기 전에<br />미리 정리해 두는 겁니다

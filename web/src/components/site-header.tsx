@@ -9,15 +9,16 @@ export function Wordmark({ light = false }: { light?: boolean }) {
   return (
     <span
       className={cn("text-xl font-bold tracking-tight", light ? "text-white" : "text-ink-950")}
-      style={{ fontFamily: "var(--font-display)" }}
+      style={{ fontFamily: "var(--font-logo)" }}
     >
       experty<span className="text-brand">.</span>
     </span>
   );
 }
 
-export function SiteHeader() {
+export function SiteHeader({ light = false }: { light?: boolean }) {
   const [scrolled, setScrolled] = useState(false);
+  const useLightText = light && !scrolled;
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
     onScroll();
@@ -34,17 +35,17 @@ export function SiteHeader() {
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 md:h-[72px]">
         <Link href="/" aria-label="experty 홈">
-          <Wordmark />
+          <Wordmark light={useLightText} />
         </Link>
-        <nav className="hidden items-center gap-8 text-[15px] font-medium text-ink-700 md:flex">
-          <a href="#why" className="hover:text-ink-950">왜 experty</a>
-          <a href="#how" className="hover:text-ink-950">이용 방법</a>
-          <a href="#pricing" className="hover:text-ink-950">요금제</a>
-          <Link href="/kim-inman" className="hover:text-ink-950">전문가 페이지</Link>
+        <nav className={cn("hidden items-center gap-8 text-[15px] font-medium md:flex", useLightText ? "text-white/70" : "text-ink-700")}>
+          <Link href="/#why" className={cn(useLightText ? "hover:text-white" : "hover:text-ink-950")}>왜 experty</Link>
+          <Link href="/#how" className={cn(useLightText ? "hover:text-white" : "hover:text-ink-950")}>이용 방법</Link>
+          <Link href="/#pricing" className={cn(useLightText ? "hover:text-white" : "hover:text-ink-950")}>요금제</Link>
+          <Link href="/kim-inman" className={cn(useLightText ? "hover:text-white" : "hover:text-ink-950")}>전문가 페이지</Link>
         </nav>
         <div className="flex items-center gap-2.5">
           <Link href="/app/inquiries">
-            <Button variant="ghost" size="sm">로그인</Button>
+            <Button variant="ghost" size="sm" className={cn(useLightText && "text-white hover:bg-white/10 hover:text-white")}>로그인</Button>
           </Link>
           <Link href="/kim-inman/inquiry">
             <Button size="sm">섭외 문의</Button>
@@ -71,8 +72,8 @@ export function SiteFooter() {
             <div>
               <div className="mb-3 font-semibold text-ink-950">제품</div>
               <ul className="space-y-2 text-ink-500">
-                <li><a href="#why" className="hover:text-brand">왜 experty</a></li>
-                <li><a href="#pricing" className="hover:text-brand">요금제</a></li>
+                <li><Link href="/#why" className="hover:text-brand">왜 experty</Link></li>
+                <li><Link href="/#pricing" className="hover:text-brand">요금제</Link></li>
                 <li><Link href="/kim-inman" className="hover:text-brand">전문가 페이지</Link></li>
               </ul>
             </div>

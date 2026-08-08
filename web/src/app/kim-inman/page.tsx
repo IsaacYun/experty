@@ -28,24 +28,24 @@ const steps = ["문의 작성", "접수 확인", "조건 조율", "일정 확정
 export default function ExpertPage() {
   return (
     <div className="overflow-x-clip">
-      <SiteHeader />
+      <SiteHeader light />
 
       {/* Hero */}
-      <section className="relative pt-32 pb-14 md:pt-36">
+      <section className="relative overflow-hidden bg-navy-900 pt-28 pb-16 md:pt-36 md:pb-24">
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-x-0 top-0 h-[420px] bg-[radial-gradient(55%_70%_at_50%_0%,#ffe9d5_0%,#fff8f2_50%,transparent_100%)]"
+          className="pointer-events-none absolute -right-16 -top-24 h-[420px] w-[420px] rounded-full bg-brand/30 blur-3xl"
         />
-        <div className="relative mx-auto max-w-3xl px-5 text-center">
+        <div className="relative mx-auto max-w-5xl px-5 text-center">
           <FadeIn>
-            <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-[28px] bg-navy-900 text-4xl font-bold text-white shadow-lg" style={{ fontFamily: "var(--font-display)" }}>
+            <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-[28px] bg-brand text-4xl font-bold text-white shadow-lg" style={{ fontFamily: "var(--font-display)" }}>
               김
             </div>
-            <h1 className="mt-6 text-3xl font-bold text-ink-950 md:text-5xl" style={{ fontFamily: "var(--font-display)" }}>
+            <h1 className="mt-6 text-3xl font-bold leading-[1.15] tracking-[-0.04em] text-white md:text-5xl md:leading-[1.08]" style={{ fontFamily: "var(--font-display)" }}>
               김인만
             </h1>
-            <p className="mt-3 text-base text-ink-500 md:text-lg">부동산경제연구소장 · 부동산 시장 분석 전문가</p>
-            <p className="mx-auto mt-5 max-w-xl text-[15px] leading-relaxed text-ink-700">
+            <p className="mt-3 text-base text-white/65 md:text-lg">부동산경제연구소장 · 부동산 시장 분석 전문가</p>
+            <p className="mx-auto mt-5 max-w-xl text-[15px] leading-relaxed text-white/75">
               정부 정책·금리·세제가 서울과 수도권 아파트 가격에 미치는 영향을 현장에서 해석해 드립니다.
               방송 출연과 기업 강연을 병행하고 있습니다.
             </p>
@@ -54,7 +54,7 @@ export default function ExpertPage() {
                 <Button size="lg">섭외 문의하기</Button>
               </Link>
               <Badge variant="ok" className="px-4 py-1.5 text-sm">섭외 가능</Badge>
-              <Badge variant="outline" className="px-4 py-1.5 text-sm">평균 응답 24시간 이내</Badge>
+              <span className="rounded-full border border-white/20 px-4 py-1.5 text-sm text-white/80">평균 응답 24시간 이내</span>
             </div>
           </FadeIn>
         </div>

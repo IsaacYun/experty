@@ -65,11 +65,11 @@ export default function InquiryPage() {
   }
 
   return (
-    <div className="min-h-dvh bg-brand-50">
-      <header className="border-b border-white/60 bg-brand-50/80 backdrop-blur-sm">
+    <div className="min-h-dvh bg-[#f7f7f5]">
+      <header className="border-b border-white/10 bg-navy-900 text-white">
         <div className="mx-auto flex h-16 max-w-2xl items-center justify-between px-5">
-          <Link href="/" aria-label="experty 홈"><Wordmark /></Link>
-          <Link href="/kim-inman" className="text-sm font-medium text-ink-500 hover:text-brand">
+          <Link href="/" aria-label="experty 홈"><Wordmark light /></Link>
+          <Link href="/kim-inman" className="text-sm font-medium text-white/65 hover:text-white">
             프로필로 돌아가기
           </Link>
         </div>
@@ -77,18 +77,18 @@ export default function InquiryPage() {
 
       <main className="mx-auto max-w-2xl px-5 py-10 md:py-14">
         <FadeIn>
-          <div className="mb-8 flex items-center gap-4">
+          <div className="mb-8 rounded-3xl bg-navy-900 p-6 text-white md:p-8">
             <div
-              className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-navy-900 text-xl font-bold text-white"
+              className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-brand text-xl font-bold text-white"
               style={{ fontFamily: "var(--font-display)" }}
             >
               김
             </div>
             <div>
-              <h1 className="text-xl font-bold text-ink-950 md:text-2xl" style={{ fontFamily: "var(--font-display)" }}>
+              <h1 className="text-xl font-bold text-white md:text-2xl" style={{ fontFamily: "var(--font-display)" }}>
                 김인만 소장에게 섭외 문의하기
               </h1>
-              <p className="mt-1 text-sm text-ink-500">방송 · 강연 · 인터뷰 · 컨설팅 문의를 받습니다.</p>
+              <p className="mt-1 text-sm text-white/60">방송 · 강연 · 인터뷰 · 컨설팅 문의를 받습니다.</p>
             </div>
           </div>
         </FadeIn>

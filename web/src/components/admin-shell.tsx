@@ -17,11 +17,11 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
 
   return (
-    <div className="min-h-dvh bg-surface-2 md:grid md:grid-cols-[230px_1fr]">
-      <aside className="border-b border-line bg-white md:border-b-0 md:border-r">
+    <div className="min-h-dvh bg-[#f4f4f2] md:grid md:grid-cols-[248px_1fr]">
+      <aside className="border-b border-white/10 bg-navy-900 text-white md:border-b-0 md:border-r md:border-r-white/10">
         <div className="flex items-center justify-between px-5 py-5 md:block">
           <Link href="/" aria-label="experty 홈">
-            <Wordmark />
+            <Wordmark light />
           </Link>
         </div>
         <nav className="flex gap-1 overflow-x-auto px-3 pb-3 md:flex-col md:pb-0" aria-label="어드민 메뉴">
@@ -35,8 +35,8 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
                 className={cn(
                   "flex items-center gap-2.5 whitespace-nowrap rounded-xl px-4 py-2.5 text-sm font-medium transition-colors",
                   active
-                    ? "bg-ink-950 text-white"
-                    : "text-ink-500 hover:bg-surface hover:text-ink-950"
+                    ? "bg-brand text-white shadow-[0_10px_24px_rgba(255,91,0,.24)]"
+                    : "text-white/55 hover:bg-white/10 hover:text-white"
                 )}
               >
                 <item.icon className="h-4.5 w-4.5 shrink-0" aria-hidden />
@@ -45,7 +45,7 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
                   <span
                     className={cn(
                       "ml-auto rounded-full px-2 py-0.5 text-xs font-bold",
-                      active ? "bg-white/15 text-white" : "bg-brand-100 text-brand-deep"
+                      active ? "bg-white/20 text-white" : "bg-white/10 text-white/75"
                     )}
                   >
                     {item.count}
@@ -55,17 +55,17 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
             );
           })}
         </nav>
-        <div className="mt-2 hidden border-t border-line px-5 py-4 md:block">
+        <div className="mt-2 hidden border-t border-white/10 px-5 py-4 md:block">
           <div className="flex items-center gap-3">
             <div
-              className="flex h-9 w-9 items-center justify-center rounded-xl bg-navy-900 text-sm font-bold text-white"
+              className="flex h-9 w-9 items-center justify-center rounded-xl bg-brand text-sm font-bold text-white"
               style={{ fontFamily: "var(--font-display)" }}
             >
               김
             </div>
             <div className="min-w-0">
-              <div className="truncate text-sm font-semibold text-ink-950">김인만</div>
-              <div className="truncate text-xs text-ink-400">김인만 부동산경제연구소</div>
+              <div className="truncate text-sm font-semibold text-white">김인만</div>
+              <div className="truncate text-xs text-white/45">김인만 부동산경제연구소</div>
             </div>
           </div>
         </div>
