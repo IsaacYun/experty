@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>문의 관리 — experty 어드민</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">본문 바로가기</a>
+  <div class="admin-layout">
+    <aside class="admin-side" aria-label="사이드바">
+      <a class="wordmark" href="index.html">experty<span>.</span></a>
+      <nav aria-label="어드민 메뉴">
+        <a href="admin-inquiries.html" class="active" aria-current="page">문의 관리 <span class="count">12</span></a>
+        <a href="admin-calendar.html">일정</a>
+        <a href="#">프로필·활동</a>
+        <a href="#">설정·구독</a>
+      </nav>
+      <div class="side-user">
+        <div class="mini-avatar" aria-hidden="true">김</div>
+        <div>
+          <div class="name">김인만</div>
+          <div class="sub">김인만 부동산경제연구소</div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="admin-main" id="main">
+      <div class="admin-head">
+        <div>
+          <h1>문의 관리</h1>
+          <p style="margin:2px 0 0;font-size:13.5px;color:var(--muted);">2026년 8월 · 유효 문의 4/4건 사용 · 다음 추가 문의부터 잠금</p>
+        </div>
+        <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+          <div class="plan-pill">플랜: <b>Free</b> · 4/4건 · 다음 문의부터 잠금</div>
+          <a class="btn btn-sm btn-primary" href="#">Basic으로 업그레이드</a>
+          <div class="seg" role="tablist" aria-label="보기 방식">
+            <button role="tab" aria-selected="true">목록</button>
+            <button role="tab" aria-selected="false">달력</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="stat-row" aria-label="이번 달 요약">
+        <div class="stat"><div class="label">신규 문의</div><div class="value">3</div><div class="delta">이번 주 +3</div></div>
+        <div class="stat"><div class="label">평균 응답 시간</div><div class="value">6.5시간</div><div class="delta">지난주 대비 -1.2시간</div></div>
+        <div class="stat"><div class="label">섭외 확정</div><div class="value">2건</div><div class="delta">8월 누적 섭외비 750만원</div></div>
+        <div class="stat"><div class="label">확정된 일정</div><div class="value">5건</div><div class="delta">다음: 8.12 기업 포럼</div></div>
+      </div>
+
+      <div class="inquiry-board">
+        <section class="inquiry-list" aria-label="문의 목록">
+          <div class="inquiry-list-head">
+            <strong style="font-size:14px;">문의 12건</strong>
+            <div class="filters" role="group" aria-label="상태 필터">
+              <button aria-pressed="true">전체</button>
+              <button aria-pressed="false">신규</button>
+              <button aria-pressed="false">확정</button>
+            </div>
+          </div>
+
+          <div class="inquiry-row active" tabindex="0" aria-current="true">
+            <div class="inquiry-row-top">
+              <span class="title">2026 하반기 경영포럼 기조강연</span>
+              <time datetime="2026-08-08">오늘 09:42</time>
+            </div>
+            <div class="inquiry-row-sub">최민지 팀장 · 한빛금융지주</div>
+            <div class="inquiry-row-badges">
+              <span class="badge badge-new">신규</span>
+              <span class="badge badge-type">강연</span>
+              <span class="chip chip-accent" style="padding:3px 9px;font-size:12px;">Google 충돌 없음</span>
+            </div>
+          </div>
+
+          <div class="inquiry-row" tabindex="0">
+            <div class="inquiry-row-top">
+              <span class="title">생방송 패널 섭외 — 부동산 규제 진단</span>
+              <time datetime="2026-08-07">어제 16:10</time>
+            </div>
+            <div class="inquiry-row-sub">박수호 PD · YTN 사이언스</div>
+            <div class="inquiry-row-badges">
+              <span class="badge badge-review">검토</span>
+              <span class="badge badge-type">방송</span>
+              <span class="chip" style="padding:3px 9px;font-size:12px;"><span class="dot dot-amber"></span> 8.14 오전 가용</span>
+            </div>
+          </div>
+
+          <div class="inquiry-row" tabindex="0">
+            <div class="inquiry-row-top">
+              <span class="title">사내 리더십 특강 — 자산관리 관점</span>
+              <time datetime="2026-08-06">8.6</time>
+            </div>
+            <div class="inquiry-row-sub">정유진 매니저 · 대성전자 인사팀</div>
+            <div class="inquiry-row-badges">
+              <span class="badge badge-negotiate">협상</span>
+              <span class="badge badge-type">강연</span>
+            </div>
+          </div>
+
+          <div class="inquiry-row" tabindex="0">
+            <div class="inquiry-row-top">
+              <span class="title">월간 투자레터 인터뷰</span>
+              <time datetime="2026-08-05">8.5</time>
+            </div>
+            <div class="inquiry-row-sub">서예린 기자 · 머니위크</div>
+            <div class="inquiry-row-badges">
+              <span class="badge badge-confirmed">수락</span>
+              <span class="badge badge-type">인터뷰</span>
+            </div>
+          </div>
+
+          <div class="inquiry-row locked" tabindex="0" aria-disabled="true">
+            <div class="inquiry-row-top">
+              <span class="title">경제연구소 컨설팅 자문</span>
+              <time datetime="2026-08-08">오늘 11:20</time>
+            </div>
+            <div class="inquiry-row-sub">문의자 정보는 잠금 상태</div>
+            <div class="inquiry-row-badges">
+              <span class="badge badge-locked">잠금</span>
+              <span class="badge badge-type">컨설팅</span>
+              <span class="locked-hint">Basic으로 업그레이드하면 열람됩니다</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="inquiry-detail" aria-label="문의 상세">
+          <div class="detail-head">
+            <div>
+              <h2>2026 하반기 경영포럼 기조강연</h2>
+              <div class="org">한빛금융지주 · 최민지 팀장 (cm.choi@hanbitfg.co.kr)</div>
+            </div>
+            <div class="detail-actions">
+              <button class="btn btn-secondary btn-sm" type="button">거절</button>
+              <button class="btn btn-primary btn-sm" type="button">수락하고 일정 만들기</button>
+            </div>
+          </div>
+
+          <div class="pipeline" aria-label="문의 상태">
+            <div class="stage done">신규</div>
+            <div class="stage current">검토</div>
+            <div class="stage">협상</div>
+            <div class="stage">수락/거절</div>
+            <div class="stage">완료/취소</div>
+          </div>
+
+          <dl class="detail-grid">
+            <div class="item"><dt>섭외 유형</dt><dd>강연 · 오프라인</dd></div>
+            <div class="item"><dt>희망 일시</dt><dd>9월 18일(금) 10:00 · 대체 가능</dd></div>
+            <div class="item"><dt>장소</dt><dd>서울 여의도 콘래드호텔 그랜드볼룸</dd></div>
+            <div class="item"><dt>진행 시간</dt><dd>1시간 30분 (Q&amp;A 포함)</dd></div>
+            <div class="item"><dt>청중</dt><dd>200~500명 · 금융권 임직원</dd></div>
+            <div class="item"><dt>예산</dt><dd>300~500만원</dd></div>
+            <div class="item"><dt>희망 주제</dt><dd>하반기 부동산 시장 전망과 자산 포트폴리오 전략</dd></div>
+            <div class="item"><dt>특이사항</dt><dd>촬영·녹화 예정 · 녹화본 사내 아카이브 활용 희망</dd></div>
+          </dl>
+
+          <div class="detail-request">
+            <span class="label">요청 내용</span>
+            매년 하반기에 개최하는 경영포럼의 기조강연자를 찾고 있습니다. 임직원 300명 내외가 참석하며, 금리·정책 변화가 자산시장에 미치는 영향과 대응 전략을 다뤄주시면 좋겠습니다. 강연 후 30분 패널 토론과 녹화본 아카이브 활용을 함께 희망합니다.
+          </div>
+
+          <div class="memo-row">
+            <input type="text" placeholder="메모 추가 (예) 9월 3주차 금요일 오전 가능, 교통 지원 확인" aria-label="메모 입력" />
+            <button class="btn btn-secondary btn-sm" type="button">저장</button>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

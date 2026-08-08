@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>김인만에게 섭외 문의 — experty</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">본문 바로가기</a>
+  <div class="inquiry-shell">
+    <div class="topbar">
+      <a class="wordmark" href="index.html">experty<span>.</span></a>
+      <a class="btn btn-sm btn-secondary" href="public-expert.html">프로필로 돌아가기</a>
+    </div>
+
+    <main id="main">
+      <div class="inquiry-hero">
+        <div class="avatar" aria-hidden="true">김</div>
+        <div>
+          <h1>김인만 소장에게 섭외 문의하기</h1>
+          <p>방송 · 강연 · 인터뷰 · 컨설팅 문의를 받습니다. 이메일 인증 후 24시간 내 접수 안내를 드립니다.</p>
+        </div>
+      </div>
+
+      <form class="inquiry-form" action="#" method="post" novalidate>
+        <fieldset>
+          <legend>섭외 유형과 행사 정보</legend>
+
+          <div class="field">
+            <label for="type">섭외 유형 <span class="required-mark" aria-hidden="true">*</span></label>
+            <div class="radio-group" role="radiogroup" aria-required="true">
+              <label><input type="radio" name="type" value="lecture" checked /> 강연</label>
+              <label><input type="radio" name="type" value="broadcast" /> 방송</label>
+              <label><input type="radio" name="type" value="interview" /> 인터뷰</label>
+              <label><input type="radio" name="type" value="consulting" /> 컨설팅</label>
+              <label><input type="radio" name="type" value="etc" /> 기타</label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="event">행사·프로그램명 <span class="required-mark" aria-hidden="true">*</span></label>
+            <input type="text" id="event" name="event" placeholder="예) 2026 하반기 경영포럼, 사내 리더십 특강" autocomplete="organization" />
+          </div>
+
+          <div class="row-2">
+            <div class="field">
+              <label for="date">희망 일시 <span class="required-mark" aria-hidden="true">*</span></label>
+              <input type="date" id="date" name="date" />
+              <p class="hint">정확하지 않아도 됩니다. 대체 가능 여부는 아래에서 선택해 주세요.</p>
+            </div>
+            <div class="field">
+              <label for="time">시작 시간</label>
+              <input type="time" id="time" name="time" value="10:00" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="flexible">일정 조정 가능 여부</label>
+            <div class="radio-group">
+              <label><input type="radio" name="flexible" value="flexible" checked /> 대체 가능</label>
+              <label><input type="radio" name="flexible" value="fixed" /> 이 날짜만 가능</label>
+            </div>
+          </div>
+
+          <div class="row-2">
+            <div class="field">
+              <label for="format">진행 방식 <span class="required-mark" aria-hidden="true">*</span></label>
+              <select id="format" name="format">
+                <option value="onsite">오프라인</option>
+                <option value="online">온라인</option>
+                <option value="hybrid">온·오프라인 혼합</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="duration">예상 진행 시간</label>
+              <select id="duration" name="duration">
+                <option>30분 이내</option>
+                <option selected>1시간</option>
+                <option>1시간 30분</option>
+                <option>2시간 이상</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="location">장소 <span class="required-mark" aria-hidden="true">*</span></label>
+            <input type="text" id="location" name="location" placeholder="오프라인은 주소, 온라인은 플랫폼명을 적어주세요" />
+          </div>
+
+          <div class="row-2">
+            <div class="field">
+              <label for="audience">청중 규모</label>
+              <select id="audience" name="audience">
+                <option>50명 미만</option>
+                <option selected>50~200명</option>
+                <option>200~500명</option>
+                <option>500명 이상</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="budget">예산 <span class="required-mark" aria-hidden="true">*</span></label>
+              <select id="budget" name="budget">
+                <option>협의 필요</option>
+                <option>100만원 미만</option>
+                <option>100~300만원</option>
+                <option>300~500만원</option>
+                <option>500만원 이상</option>
+              </select>
+              <p class="hint">‘협의 필요’를 선택해도 문의 가능합니다.</p>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="topic">희망 주제</label>
+            <input type="text" id="topic" name="topic" placeholder="예) 하반기 부동산 시장 전망과 투자 전략" />
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>문의자 정보</legend>
+
+          <div class="row-2">
+            <div class="field">
+              <label for="name">이름 <span class="required-mark" aria-hidden="true">*</span></label>
+              <input type="text" id="name" name="name" autocomplete="name" />
+            </div>
+            <div class="field">
+              <label for="org">소속 <span class="required-mark" aria-hidden="true">*</span></label>
+              <input type="text" id="org" name="org" autocomplete="organization" />
+            </div>
+          </div>
+
+          <div class="row-2">
+            <div class="field">
+              <label for="email">이메일 <span class="required-mark" aria-hidden="true">*</span></label>
+              <input type="email" id="email" name="email" autocomplete="email" placeholder="인증 메일이 발송됩니다" />
+            </div>
+            <div class="field">
+              <label for="phone">연락처 <span class="required-mark" aria-hidden="true">*</span></label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="010-0000-0000" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="message">요청 내용 <span class="required-mark" aria-hidden="true">*</span></label>
+            <textarea id="message" name="message" placeholder="행사 성격, 참석자 특성, 섭외 배경 등 알려주고 싶은 내용을 자유롭게 적어주세요."></textarea>
+          </div>
+
+          <div class="field">
+            <label>선택 입력 사항</label>
+            <div style="display:flex;flex-direction:column;gap:8px;font-size:14px;color:var(--muted);">
+              <label style="display:flex;gap:8px;align-items:center;font-weight:400;margin:0;"><input type="checkbox" name="extra" value="travel" style="accent-color:var(--accent);" /> 교통·숙박 지원 가능</label>
+              <label style="display:flex;gap:8px;align-items:center;font-weight:400;margin:0;"><input type="checkbox" name="extra" value="recording" style="accent-color:var(--accent);" /> 촬영·녹화·2차 활용 예정</label>
+              <label style="display:flex;gap:8px;align-items:center;font-weight:400;margin:0;"><input type="checkbox" name="extra" value="alt-date" style="accent-color:var(--accent);" /> 복수 후보 일정을 함께 제안하고 싶어요</label>
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="consent">
+          <input type="checkbox" id="consent" name="consent" required />
+          <label for="consent" style="margin:0;font-weight:400;font-size:13.5px;">섭외 문의 처리를 위해 개인정보(이름, 소속, 이메일, 연락처) 수집·이용에 동의합니다. 수집된 정보는 문의 처리 후 보유 기간 경과 시 파기됩니다.</label>
+        </div>
+
+        <div class="submit-row">
+          <p class="note">이메일 인증을 완료해야 문의가 접수됩니다.</p>
+          <button class="btn btn-primary" type="submit" style="padding:13px 34px;">문의 접수하기</button>
+        </div>
+      </form>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>일정 — experty 어드민</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">본문 바로가기</a>
+  <div class="admin-layout">
+    <aside class="admin-side" aria-label="사이드바">
+      <a class="wordmark" href="index.html">experty<span>.</span></a>
+      <nav aria-label="어드민 메뉴">
+        <a href="admin-inquiries.html">문의 관리 <span class="count">12</span></a>
+        <a href="admin-calendar.html" class="active" aria-current="page">일정</a>
+        <a href="#">프로필·활동</a>
+        <a href="#">설정·구독</a>
+      </nav>
+      <div class="side-user">
+        <div class="mini-avatar" aria-hidden="true">김</div>
+        <div>
+          <div class="name">김인만</div>
+          <div class="sub">김인만 부동산경제연구소</div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="admin-main" id="main">
+      <div class="admin-head">
+        <div>
+          <h1>일정</h1>
+          <p style="margin:2px 0 0;font-size:13.5px;color:var(--muted);">2026년 8월 10일 ~ 8월 16일 · 직접 일정과 섭외 일정을 함께 관리합니다.</p>
+        </div>
+        <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+          <button class="btn btn-secondary btn-sm" type="button">← 이전 주</button>
+          <button class="btn btn-secondary btn-sm" type="button">다음 주 →</button>
+          <button class="btn btn-primary btn-sm" type="button">직접 일정 추가</button>
+        </div>
+      </div>
+
+      <div class="calendar-toolbar">
+        <h2>주간 보기</h2>
+        <span class="google-note"><span class="dot dot-green"></span> Google Calendar 연결됨 · 기존 일정은 바쁨 여부만 사용 · 확정 섭외는 Google에 등록됩니다</span>
+      </div>
+
+      <div class="week-grid" role="list" aria-label="주간 일정">
+        <div class="day-col" role="listitem">
+          <header><b>10</b><span class="dow">월</span></header>
+          <div class="day-events">
+            <div class="evt evt-booked"><time>10:00</time><span class="t">사내 리더십 특강</span>대성전자 · 확정</div>
+          </div>
+        </div>
+        <div class="day-col" role="listitem">
+          <header><b>11</b><span class="dow">화</span></header>
+          <div class="day-events">
+            <div class="evt evt-personal"><time>14:00</time><span class="t">개인 일정 (Google)</span>바쁨으로만 표시</div>
+          </div>
+        </div>
+        <div class="day-col today" role="listitem">
+          <header><b>12</b><span class="dow">수</span> · 오늘</header>
+          <div class="day-events">
+            <div class="evt evt-booked"><time>15:00</time><span class="t">기업 포럼 강연</span>경기상공회의소 · 확정</div>
+            <div class="evt evt-inquiry"><time>16:30</time><span class="t">경영포럼 섭외 검토</span>한빛금융지주 문의</div>
+          </div>
+        </div>
+        <div class="day-col" role="listitem">
+          <header><b>13</b><span class="dow">목</span></header>
+          <div class="day-events">
+            <div class="evt evt-personal"><time>오전</time><span class="t">개인 일정 (Google)</span>바쁨으로만 표시</div>
+            <div class="evt evt-hold"><time>19:00</time><span class="t">방송 출연 미확정</span>YTN 패널 · 가예약</div>
+          </div>
+        </div>
+        <div class="day-col" role="listitem">
+          <header><b>14</b><span class="dow">금</span></header>
+          <div class="day-events">
+            <div class="evt evt-booked"><time>11:00</time><span class="t">머니위크 인터뷰</span>서면+전화 · 확정</div>
+          </div>
+        </div>
+        <div class="day-col" role="listitem">
+          <header><b>15</b><span class="dow">토</span></header>
+          <div class="day-events">
+            <div class="evt evt-hold"><time>10:00</time><span class="t">포럼 가예약</span>조건 조율 중<span class="conflict">Google 일정과 겹침</span></div>
+          </div>
+        </div>
+        <div class="day-col" role="listitem">
+          <header><b>16</b><span class="dow">일</span></header>
+          <div class="day-events"></div>
+        </div>
+      </div>
+
+      <div class="calendar-legend" aria-label="범례">
+        <span class="lg"><span class="dot dot-green"></span> 확정 섭외 — Google Calendar에 등록</span>
+        <span class="lg"><span class="dot dot-amber"></span> 가예약 — 조건 조율 중</span>
+        <span class="lg"><span class="dot dot-accent"></span> 문의 기반 검토</span>
+        <span class="lg"><span class="dot" style="background:var(--line-strong)"></span> 개인/기존 일정 — 바쁨 여부만 표시</span>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
