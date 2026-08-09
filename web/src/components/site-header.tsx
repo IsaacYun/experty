@@ -87,8 +87,8 @@ export function SiteFooter() {
             <div>
               <div className="mb-3 font-semibold text-ink-950">정책</div>
               <ul className="space-y-2 text-ink-500">
-                <li><a href="#" className="hover:text-brand">이용약관</a></li>
-                <li><a href="#" className="hover:text-brand">개인정보처리방침</a></li>
+                <li>이용약관 준비 중</li>
+                <li>개인정보처리방침 준비 중</li>
               </ul>
             </div>
           </div>

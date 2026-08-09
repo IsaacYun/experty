@@ -2,15 +2,13 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { CalendarDays, Inbox, Settings, TrendingUp } from "lucide-react";
+import { CalendarDays, Inbox } from "lucide-react";
 import { Wordmark } from "@/components/site-header";
 import { cn } from "@/lib/utils";
 
 const navItems = [
   { href: "/app/inquiries", label: "문의 관리", icon: Inbox, count: 12 },
   { href: "/app/calendar", label: "일정", icon: CalendarDays },
-  { href: "#", label: "프로필·활동", icon: TrendingUp },
-  { href: "#", label: "설정·구독", icon: Settings },
 ];
 
 export function AdminShell({ children }: { children: React.ReactNode }) {
@@ -26,7 +24,7 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
         </div>
         <nav className="flex gap-1 overflow-x-auto px-3 pb-3 md:flex-col md:pb-0" aria-label="어드민 메뉴">
           {navItems.map((item) => {
-            const active = pathname.startsWith(item.href) && item.href !== "#";
+            const active = pathname.startsWith(item.href);
             return (
               <Link
                 key={item.label}
