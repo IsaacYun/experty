@@ -2,17 +2,26 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { CalendarDays, Inbox } from "lucide-react";
+import { CalendarDays, Globe2, Inbox, LayoutPanelTop, Settings2, type LucideIcon } from "lucide-react";
 import { Wordmark } from "@/components/site-header";
 import { cn } from "@/lib/utils";
 
-const navItems = [
-  { href: "/app/inquiries", label: "문의 관리", icon: Inbox, count: 12 },
-  { href: "/app/calendar", label: "일정", icon: CalendarDays },
+type NavItem = { href: string; label: string; icon: LucideIcon; count?: number };
+
+const expertNavItems: NavItem[] = [
+  { href: "/expert-admin/kim-inman/inquiries", label: "문의 관리", icon: Inbox, count: 12 },
+  { href: "/expert-admin/kim-inman/calendar", label: "월간 일정", icon: CalendarDays },
+  { href: "/expert-admin/kim-inman/profile", label: "홈페이지·활동", icon: LayoutPanelTop },
+  { href: "/expert-admin/kim-inman/domain", label: "도메인 연결", icon: Globe2 },
 ];
 
-export function AdminShell({ children }: { children: React.ReactNode }) {
+const platformNavItems: NavItem[] = [
+  { href: "/platform-admin", label: "전문가 운영", icon: Settings2 },
+];
+
+export function AdminShell({ children, platform = false }: { children: React.ReactNode; platform?: boolean }) {
   const pathname = usePathname();
+  const navItems = platform ? platformNavItems : expertNavItems;
 
   return (
     <div className="min-h-dvh bg-[#f4f4f2] md:grid md:grid-cols-[248px_1fr]">
@@ -21,6 +30,7 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
           <Link href="/" aria-label="experty 홈">
             <Wordmark light />
           </Link>
+          <span className="hidden rounded-full bg-white/10 px-2.5 py-1 text-[11px] font-bold text-white/60 md:inline-flex">{platform ? "PLATFORM" : "KIM INMAN"}</span>
         </div>
         <nav className="flex gap-1 overflow-x-auto px-3 pb-3 md:flex-col md:pb-0" aria-label="어드민 메뉴">
           {navItems.map((item) => {
@@ -62,8 +72,8 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
               김
             </div>
             <div className="min-w-0">
-              <div className="truncate text-sm font-semibold text-white">김인만</div>
-              <div className="truncate text-xs text-white/45">김인만 부동산경제연구소</div>
+              <div className="truncate text-sm font-semibold text-white">{platform ? "Experty 운영팀" : "김인만"}</div>
+              <div className="truncate text-xs text-white/45">{platform ? "Platform administrator" : "김인만 부동산경제연구소"}</div>
             </div>
           </div>
         </div>

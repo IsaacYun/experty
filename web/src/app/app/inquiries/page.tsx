@@ -67,7 +67,7 @@ export default function InquiriesPage() {
       <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl font-bold text-ink-950" style={{ fontFamily: "var(--font-display)" }}>문의 관리</h1>
-          <p className="mt-1 text-sm text-ink-500">2026년 8월 · 유효 문의 4/4건 사용 · 다음 추가 문의부터 잠금</p>
+          <p className="mt-1 text-sm text-ink-500">김인만 전문가 공간 · 2026년 8월 · 유효 문의 4/4건 사용</p>
         </div>
         <div className="flex items-center gap-3">
           <Badge variant="outline" className="px-4 py-2 text-sm">플랜: <span className="font-bold text-ink-950">Free</span> · 4/4건</Badge>

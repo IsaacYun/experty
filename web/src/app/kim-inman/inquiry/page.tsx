@@ -8,8 +8,8 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { FadeIn } from "@/components/ui/section";
-import { Wordmark } from "@/components/site-header";
 import { cn } from "@/lib/utils";
+import { getExpert } from "@/data/experts";
 
 const inquiryTypes = ["강연", "방송", "인터뷰", "컨설팅", "기타"];
 
@@ -40,8 +40,15 @@ const inputCls =
   "h-12 w-full rounded-xl border border-line bg-white px-4 text-[15px] text-ink-950 placeholder:text-ink-400 focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-1";
 
 export default function InquiryPage() {
+  const expert = getExpert("kim-inman");
   const [submitted, setSubmitted] = useState(false);
   const [type, setType] = useState("강연");
+
+  if (!expert) return null;
+
+  const homeHref = `/${expert.slug}`;
+  const displayName = expert.brandName ?? expert.name;
+  const familyName = expert.name.charAt(0);
 
   if (submitted) {
     return (
@@ -53,11 +60,11 @@ export default function InquiryPage() {
           문의가 접수됐습니다
         </h1>
         <p className="mt-3 max-w-md text-[15px] leading-relaxed text-ink-500">
-          확인 메일을 보내드렸어요. 이메일 인증을 완료하면 전문가에게 즉시 전달되며, 보통 24시간 이내에 회신을 드립니다.
+          확인 메일을 보내드렸어요. 이메일 인증을 완료하면 {expert.name}에게 즉시 전달되며, 보통 {expert.responseTime.replace("평균 응답 ", "")} 이내에 회신을 드립니다.
         </p>
         <div className="mt-8 flex gap-3">
-          <Link href="/kim-inman">
-            <Button variant="outline">전문가 프로필로 돌아가기</Button>
+          <Link href={homeHref}>
+            <Button variant="outline">{displayName} 프로필로 돌아가기</Button>
           </Link>
         </div>
       </div>
@@ -68,8 +75,15 @@ export default function InquiryPage() {
     <div className="min-h-dvh bg-[#f7f7f5]">
       <header className="border-b border-white/10 bg-navy-900 text-white">
         <div className="mx-auto flex h-16 max-w-2xl items-center justify-between px-5">
-          <Link href="/" aria-label="experty 홈"><Wordmark light /></Link>
-          <Link href="/kim-inman" className="text-sm font-medium text-white/65 hover:text-white">
+          <Link
+            href={homeHref}
+            aria-label={`${displayName} 홈`}
+            className="text-xl font-bold tracking-[-0.01em] text-white"
+            style={{ fontFamily: "var(--font-display)" }}
+          >
+            {displayName}
+          </Link>
+          <Link href={homeHref} className="text-sm font-medium text-white/65 hover:text-white">
             프로필로 돌아가기
           </Link>
         </div>
@@ -82,13 +96,13 @@ export default function InquiryPage() {
               className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-brand text-xl font-bold text-white"
               style={{ fontFamily: "var(--font-display)" }}
             >
-              김
+              {familyName}
             </div>
             <div>
               <h1 className="text-xl font-bold text-white md:text-2xl" style={{ fontFamily: "var(--font-display)" }}>
-                김인만 소장에게 섭외 문의하기
+                {expert.name}에게 섭외 문의하기
               </h1>
-              <p className="mt-1 text-sm text-white/60">방송 · 강연 · 인터뷰 · 컨설팅 문의를 받습니다.</p>
+              <p className="mt-1 text-sm text-white/60">{expert.bookingFormats.join(" · ")} 문의를 받습니다.</p>
             </div>
           </div>
         </FadeIn>

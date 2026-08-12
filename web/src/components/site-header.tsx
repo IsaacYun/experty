@@ -44,7 +44,7 @@ export function SiteHeader({ light = false }: { light?: boolean }) {
           <Link href="/kim-inman" className={cn(useLightText ? "hover:text-white" : "hover:text-ink-950")}>전문가 페이지</Link>
         </nav>
         <div className="flex items-center gap-2.5">
-          <Link href="/app/inquiries">
+          <Link href="/expert-admin/kim-inman/inquiries">
             <Button variant="ghost" size="sm" className={cn(useLightText && "text-white hover:bg-white/10 hover:text-white")}>로그인</Button>
           </Link>
           <Link href="/kim-inman/inquiry">
