@@ -18,6 +18,7 @@ export type ExpertProfile = {
   name: string;
   brandName?: string;
   title: string;
+  specialty: string;
   category: string;
   bio: string;
   responseTime: string;
@@ -38,7 +39,8 @@ export const experts: Record<string, ExpertProfile> = {
     slug: "kim-inman",
     name: "김인만",
     brandName: "김인만",
-    title: "부동산경제연구소장 · 부동산 시장 분석 전문가",
+    title: "부동산경제연구소장",
+    specialty: "부동산 시장 분석 전문가",
     category: "REAL ESTATE ECONOMY",
     bio: "정부 정책·금리·세제가 서울과 수도권 아파트 가격에 미치는 영향을 현장에서 해석합니다. 방송 출연과 기업 강연을 병행하며, 시장을 움직이는 숫자와 변화를 쉽게 전달합니다.",
     responseTime: "평균 응답 24시간 이내",
