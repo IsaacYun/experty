@@ -1,0 +1,90 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css");
+@import "tailwindcss";
+
+@font-face {
+  font-family: "GMarketSans";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff") format("woff");
+  font-weight: 300;
+  font-display: swap;
+}
+@font-face {
+  font-family: "GMarketSans";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff") format("woff");
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "GMarketSans";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff") format("woff");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@theme {
+  --color-brand: #ff6f00;
+  --color-brand-deep: #e85e00;
+  --color-brand-hover: #dc5f00;
+  --color-brand-soft: #ffae69;
+  --color-brand-50: #fff7ef;
+  --color-brand-100: #ffe8d2;
+  --color-brand-200: #ffc38c;
+
+  --color-ink-950: #101828;
+  --color-ink-800: #364153;
+  --color-ink-700: #4a5565;
+  --color-ink-500: #6a7282;
+  --color-ink-400: #99a1af;
+  --color-line: #eaecf0;
+  --color-surface: #f7f7f5;
+  --color-surface-2: #f0f0ed;
+
+  --color-navy-900: #212225;
+  --color-navy-800: #292a2d;
+  --color-navy-700: #333438;
+
+  --color-ok: #2de0a4;
+  --color-warn: #f99c00;
+
+  --font-sans: "Pretendard Variable", Pretendard, -apple-system, "Apple SD Gothic Neo", sans-serif;
+  --font-display: "GMarketSans", "Pretendard Variable", Pretendard, sans-serif;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #101828;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  letter-spacing: -0.011em;
+  word-break: keep-all;
+}
+
+::selection { background: var(--color-brand-200); color: var(--color-ink-950); }
+
+.terra-checker { background-image: linear-gradient(rgba(16,24,40,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(16,24,40,.04) 1px,transparent 1px); background-size: 34px 34px; }
+.terra-display { letter-spacing:-.07em; }
+
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee { animation: marquee 46s linear infinite; }
+.marquee-mask {
+  mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee { animation: none; }
+  html { scroll-behavior: auto; }
+}
